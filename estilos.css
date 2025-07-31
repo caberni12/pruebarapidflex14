@@ -846,29 +846,59 @@
   .integracion-btn img {
     max-height: 100px;
   }
-
-  /* ===== IMÁGENES EN TARJETA CORREGIDAS ===== */
-  .imagen-telefono,
-  .imagen-cajas {
+}
+@media (max-width: 768px) {
+  /* Contenedores generales tipo tarjeta */
+  .seccion-telefono,
+  .seccion-seguridad {
     width: 95%;
     margin: 20px auto;
-    padding: 20px;
-    min-height: 340px;
-    background-color: #fff;
+    padding: 16px;
     border-radius: 16px;
+    background-color: #fff;
     box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+    box-sizing: border-box;
+  }
+
+  /* Texto dentro de la tarjeta */
+  .contenido-telefono,
+  .contenido-seguridad {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .contenido-telefono h2,
+  .contenido-seguridad h2 {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+  }
+
+  .contenido-telefono p,
+  .contenido-seguridad p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+
+  /* Imagen dentro de su propia tarjeta estilo .servicio */
+  .imagen-telefono,
+  .imagen-cajas {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+    padding: 16px;
+    margin-bottom: 20px;
+    background-color: #fff;
+    border-radius: 16px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
     box-sizing: border-box;
   }
 
   .imagen-telefono img,
   .imagen-cajas img {
-    width: 300px;
-    height: 300px;
+    width: 80px;
+    height: 80px;
     object-fit: contain;
-    display: block;
-    margin: 0 auto;
+    margin-bottom: 10px;
   }
 }
