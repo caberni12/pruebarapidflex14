@@ -624,8 +624,14 @@
   }
 }
 
-/* ===== Versión móvil completa (≤768px) ===== */
 @media (max-width: 768px) {
+  body {
+    padding: 0;
+    margin: 0;
+    overflow-x: hidden;
+    background-color: #fff;
+  }
+
   .hamburger {
     display: block;
   }
@@ -650,82 +656,30 @@
     left: 0;
   }
 
-  .seccion-telefono,
-  .seccion-seguridad {
+  .nav-links {
     flex-direction: column;
-    align-items: center;
-    padding: 30px 20px;
-    text-align: center;
+    gap: 12px;
+    background: #fff;
+    width: 100%;
+    padding: 12px;
+    display: none;
   }
 
-  .contenido-telefono,
-  .contenido-seguridad {
-    width: 95%;
-    margin: 20px auto;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 16px;
-    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
-    text-align: center;
-    box-sizing: border-box;
+  .nav-links.open {
+    display: flex;
   }
 
-  .contenido-telefono h2,
-  .contenido-seguridad h2 {
-    font-size: 1.8rem;
-    line-height: 1.3;
-    margin-bottom: 10px;
-  }
-
-  .contenido-telefono p,
-  .contenido-seguridad p {
-    font-size: 1rem;
-    font-weight: 500;
-    line-height: 1.6;
-    margin: 0 auto;
-    max-width: 95%;
-  }
-
-  .item-con-icono {
+  nav {
     flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 8px;
-  }
-
-  .item-con-icono p {
-    font-size: 1rem;
-    font-weight: 600;
-    line-height: 1.5;
-    max-width: 95%;
-  }
-
-  .item-con-icono .icono {
-    width: 40px;
-    height: 40px;
-  }
-
-  body {
-    padding: 0;
-    margin: 0;
-    overflow-x: hidden;
-    background-color: #fff;
-  }
-
-  section,
-  .seccion-telefono,
-  .seccion-seguridad,
-  .seccion-marketplaces,
-  .seccion-integraciones,
-  .modal-content,
-  .servicios {
-    width: 95%;
-    margin: 20px auto;
+    align-items: flex-start;
     padding: 16px;
-    border-radius: 16px;
-    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
-    box-sizing: border-box;
-    background-color: #ffffff;
+    height: auto;
+  }
+
+  .nav-logo img {
+    width: 80px;
+    height: auto;
+    margin-bottom: 10px;
   }
 
   .hero-text {
@@ -751,11 +705,76 @@
     text-align: center;
   }
 
+  /* === Estructura general tipo tarjeta para todas las secciones === */
+  section,
+  .seccion-telefono,
+  .seccion-seguridad,
+  .seccion-marketplaces,
+  .seccion-integraciones,
+  .modal-content,
+  .servicios {
+    width: 95%;
+    margin: 20px auto;
+    padding: 16px;
+    border-radius: 16px;
+    background-color: #fff;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+    box-sizing: border-box;
+  }
+
+  /* === Estilo unificado para texto (teléfono y caja) === */
+  .contenido-telefono,
+  .contenido-seguridad {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .contenido-telefono h2,
+  .contenido-seguridad h2 {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+  }
+
+  .contenido-telefono p,
+  .contenido-seguridad p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+
+  /* === Estilo unificado para imagen (teléfono y caja) === */
+  .imagen-telefono,
+  .imagen-cajas {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 16px;
+    margin-bottom: 20px;
+    background-color: #fff;
+    border-radius: 16px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+    box-sizing: border-box;
+  }
+
+  .imagen-telefono img,
+  .imagen-cajas img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    margin-bottom: 10px;
+  }
+
+  /* === Servicio (como referencia visual) === */
   .servicio {
     max-width: 100%;
-    margin: 0 auto;
+    margin: 0 auto 20px auto;
     height: auto;
     padding: 16px;
+    background-color: #fff;
+    border-radius: 16px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+    text-align: center;
+    box-sizing: border-box;
   }
 
   .servicio img {
@@ -794,111 +813,22 @@
     height: 36px;
   }
 
-  .nav-links {
+  .item-con-icono {
     flex-direction: column;
-    gap: 12px;
-    background: #fff;
-    width: 100%;
-    padding: 12px;
-    display: none;
-  }
-
-  .nav-links.open {
-    display: flex;
-  }
-
-  nav {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 16px;
-    height: auto;
-  }
-
-  .nav-logo img {
-    width: 80px;
-    height: auto;
-    margin-bottom: 10px;
-  }
-
-  .slider-menu {
-    width: 90%;
-    max-width: 320px;
-    left: -100%;
-  }
-
-  .slider-menu.open {
-    left: 0;
-  }
-
-  .seccion-marketplaces h2 {
-    font-size: 1.8rem;
-  }
-
-  .seccion-marketplaces h3 {
-    font-size: 1.4rem;
-  }
-
-  .seccion-marketplaces p {
-    font-size: 0.95rem;
-    white-space: normal;
-  }
-
-  .integracion-btn img {
-    max-height: 100px;
-  }
-}
-@media (max-width: 768px) {
-  /* Contenedores generales tipo tarjeta */
-  .seccion-telefono,
-  .seccion-seguridad {
-    width: 95%;
-    margin: 20px auto;
-    padding: 16px;
-    border-radius: 16px;
-    background-color: #fff;
-    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
-    box-sizing: border-box;
-  }
-
-  /* Texto dentro de la tarjeta */
-  .contenido-telefono,
-  .contenido-seguridad {
-    text-align: center;
-    margin-bottom: 20px;
-  }
-
-  .contenido-telefono h2,
-  .contenido-seguridad h2 {
-    font-size: 1.3rem;
-    margin-bottom: 10px;
-  }
-
-  .contenido-telefono p,
-  .contenido-seguridad p {
-    font-size: 0.95rem;
-    line-height: 1.5;
-  }
-
-  /* Imagen dentro de su propia tarjeta estilo .servicio */
-  .imagen-telefono,
-  .imagen-cajas {
-    display: flex;
-    justify-content: center;
     align-items: center;
-    flex-direction: column;
-    padding: 16px;
-    margin-bottom: 20px;
-    background-color: #fff;
-    border-radius: 16px;
-    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
-    box-sizing: border-box;
+    text-align: center;
+    gap: 8px;
   }
 
-  .imagen-telefono img,
-  .imagen-cajas img {
-    width: 80px;
-    height: 80px;
-    object-fit: contain;
-    margin-bottom: 10px;
+  .item-con-icono p {
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.5;
+    max-width: 95%;
+  }
+
+  .item-con-icono .icono {
+    width: 40px;
+    height: 40px;
   }
 }
